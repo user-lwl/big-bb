@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大声bb</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📢</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="title-icon">📢</span><span class="title-text">大声bb</span></h1>
+            <p class="subtitle">我可以在群里大声蛐蛐老板了！</p>
+        </header>
+        
+        <main>
+            <div class="input-section">
+                <div class="input-header">
+                    <label for="inputText">输入文字或密文：</label>
+                    <div class="key-option">
+                        <input type="checkbox" id="useKey" class="key-checkbox">
+                        <label for="useKey" class="key-label">使用密钥</label>
+                    </div>
+                </div>
+                <textarea id="inputText" placeholder="在这里输入要加密或解密的内容..."></textarea>
+                <div class="key-input-container" id="keyInputContainer" style="display: none;">
+                    <input type="password" id="keyInput" placeholder="请输入密钥..." class="key-input">
+                    <button type="button" id="toggleKeyVisibility" class="toggle-key-btn" title="显示密钥">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="button-section">
+                <button id="encryptBtn" class="btn btn-encrypt">加密</button>
+                <button id="decryptBtn" class="btn btn-decrypt">解密</button>
+                <button id="clearBtn" class="btn btn-clear">清空</button>
+            </div>
+            
+            <div class="output-section">
+                <div class="output-header">
+                    <label for="outputText">输出结果：</label>
+                    <button id="copyBtn" class="copy-btn" title="复制结果">复制</button>
+                </div>
+                <textarea id="outputText" readonly placeholder="加密或解密结果将显示在这里..."></textarea>
+            </div>
+            
+            <div class="info-section">
+                <h3>加密规则说明</h3>
+                <ul>
+                    <li><strong>基础加密：</strong>将普通文本转换为由"玛"、"卡"、"巴"组成的密文</li>
+                    <li><strong>分隔符：</strong>使用"咔"作为字符间的分隔符</li>
+                    <li><strong>密钥加密：</strong>勾选"使用密钥加密"可增加额外的安全层</li>
+                    <li><strong>密钥规则：</strong>加密和解密必须使用相同的密钥才能正确还原</li>
+                    <li><strong>支持：</strong>中英文混合文本，完全可逆加密</li>
+                    <li><strong>示例：</strong>"Hello世界" → "玛卡巴咔卡玛巴咔..."</li>
+                </ul>
+            </div>
+        </main>
+        
+        <footer>
+            <p class="footer-info">
+                大声bb ©2025 by <a href="https://github.com/user-lwl" target="_blank" rel="noopener noreferrer">user-lwl</a> | 
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">鲁ICP备2024080109号-2</a>
+            </p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
